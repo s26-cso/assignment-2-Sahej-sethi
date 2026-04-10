@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <dlfcn.h> // This is Dynamic Linking library -> Allows a program to load code into its memory 
 // while its already running, rather than linking which happens at compile time
-// Open → Locate → Execute → Close (4 step way to use the library)
+// Open -> Locate -> Execute -> Close (4 step way to use the library)
 #include <string.h>
 
 int main() {
@@ -51,16 +51,16 @@ int main() {
         // dlerror finds error in functions like dlopen and dlsym, but we checked for dlopen error
         // it returns pointer to string if something went wrong during calls
         // if null  => dlsym found the function
-        if (error != NULL) {
+        if(error != NULL){
             fprintf(stderr, "%s\n", error);
-        } else {
+        }else{
             // Execute and print the result
             printf("%d\n", func(a, b));
         }
     }
 
     // Clean up before exiting if any open
-    if (handle != NULL) {
+    if(handle != NULL){
         dlclose(handle);
     }
 
