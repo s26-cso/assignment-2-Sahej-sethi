@@ -1,5 +1,6 @@
 .data
 fmt: .string "%d "
+newline: .string "\n" 
 
 .text
 .global main
@@ -151,6 +152,9 @@ main:
         beq x0, x0, print_loop
     
     end_print:
+
+    la a0, newline         
+    call printf 
 
     ld ra, 0(sp)
     ld s0, 8(sp)
