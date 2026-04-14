@@ -132,12 +132,12 @@ getAtMost:
         ret
 
         not_if:
-            blt a0, t1, if_true
+            blt a0, t1, if_true_getAtMost
             mv t0, a1
             ld a1, node_right(a1)
             beq x0, x0, loop_start1
 
-            if_true:
+            if_true_getAtMost:
             ld a1, node_left(a1)
             beq x0, x0, loop_start1
 
