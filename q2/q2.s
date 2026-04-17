@@ -1,5 +1,6 @@
 .data
 fmt: .string "%d "
+fmt_last: .string "%d"
 newline: .string "\n" 
 
 .text
@@ -145,7 +146,14 @@ main:
         add t1, s3, t1
         lw a1, 0(t1)
         
+        addi t2, s4,-1
+        bne s5, t2, print_space
+        la a0, fmt_last
+        beq x0, x0, continue1
+        print_space:
         la a0, fmt
+        
+        continue1:
         call printf
 
         addi s5, s5, 1
