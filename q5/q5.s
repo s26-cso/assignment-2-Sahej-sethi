@@ -1,6 +1,6 @@
 .data
 filename: .string "input.txt"
-mode: .string "r"
+mode: .string "rb"
 yes: .string "Yes\n"
 no: .string "No\n"
 
